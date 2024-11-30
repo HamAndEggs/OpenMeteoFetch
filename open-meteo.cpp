@@ -7,7 +7,7 @@
 */
 
 #include "open-meteo.h"
-#include "TinyJson.h"
+#include "TinyJson/TinyJson.h"
 
 #include <sstream>
 #include <iomanip>
@@ -22,7 +22,7 @@ OpenMeteo::OpenMeteo(const std::string& jsonString)
 
 	const tinyjson::JsonValue& hourly = root["hourly"];
 
-	for( int n = 0 ; n < hourly["time"].GetArraySize() ; n++ )
+	for( size_t n = 0 ; n < hourly["time"].GetArraySize() ; n++ )
 	{
 		const std::string time = hourly["time"][n];
 		const float temperature = hourly["temperature_2m"][n];
