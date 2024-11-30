@@ -1,3 +1,6 @@
 [submodule "TinyJson"]
 	path = TinyJson
 	url = https://github.com/HamAndEggs/TinyJson.git
+[submodule "appbuild"]
+	path = appbuild
+	url = https://github.com/HamAndEggs/appbuild.git
