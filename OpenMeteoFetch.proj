@@ -5,7 +5,7 @@
     ],
     "configurations": {
         "release": {
-            "default": true,
+            "default": false,
             "target": "executable",
             "compiler": "gcc",
             "linker": "gcc",
@@ -23,6 +23,7 @@
             "libs": [
                 "m",
                 "stdc++",
+                "curl",
                 "pthread"
             ],
             "define": [
@@ -31,7 +32,7 @@
             ]
         },
         "debug": {
-            "default": false,
+            "default": true,
             "target": "executable",
             "compiler": "gcc",
             "linker": "gcc",
@@ -49,6 +50,7 @@
             "libs": [
                 "m",
                 "stdc++",
+                "curl",
                 "pthread"
             ],
             "define": [
