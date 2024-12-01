@@ -36,25 +36,8 @@ struct Hourly
     const float wind_speed_10m;
     const bool is_day;
 
-    operator const std::string()const
-    {
-        return toString();
-    }
-
-    const std::string toString()const
-    {
-        std::stringstream s;
-        s << " Time Source:" << time_string 
-          << " Unix Time:" << unix_time
-          << " Human Time:" << ctime.tm_mday << "/" << ctime.tm_mon + 1 << "/" << 1900 + ctime.tm_year << " " << ctime.tm_hour << ":" << ctime.tm_min
-          << " Precipitation Probability:" << precipitation_probability << "%"
-          << " Weather Code:" << weather_code
-          << " Icon Code:" << icon_code
-          << " visibility:" << visibility << "M"
-          << " Wind Speed:" << wind_speed_10m << "M/s"
-          << " " << (is_day ? "DAY" : "NIGHT");
-        return s.str();
-    }
+    operator const std::string()const{return toString();}
+    const std::string toString()const;
 
 };
 
@@ -67,7 +50,7 @@ struct OpenMeteo
 
 private:
     std::vector<Hourly> Forcast;
-    const std::string MakeIconCode(int weatherCode)const;
+    const std::string MakeIconCode(int weatherCode,bool is_day)const;
     const std::tm GetCTime(const std::string timeString)const;
     const uint64_t GetUnixTime(std::tm t)const;
 };
