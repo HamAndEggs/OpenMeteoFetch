@@ -49,7 +49,7 @@ OpenMeteo::OpenMeteo(const std::string& jsonString)
 		const int cloud_cover = hourly["cloud_cover"][n];
 		const int visibility = hourly["visibility"][n];
 		const float wind_speed_10m = hourly["wind_speed_10m"][n];
-		const bool is_day = hourly["wind_speed_10m"][n].GetInt() == 1;
+		const bool is_day = hourly["is_day"][n].GetInt() == 1;
 
 		const std::tm ctime = GetCTime(timeString);
 
