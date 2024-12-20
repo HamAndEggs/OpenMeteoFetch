@@ -24,17 +24,17 @@ namespace openmeteo { // Using a namespace to try to prevent name clashes as my 
 struct Hourly
 {// to be used with the following API call.
  // https://api.open-meteo.com/v1/forecast?latitude= YOUR LAT &longitude= YOUR LONG &hourly=temperature_2m,precipitation_probability,weather_code,cloud_cover,visibility,wind_speed_10m,is_day
-    const std::string time_string; // A direct copy of the time as sent to us.
-    const uint64_t unix_time;
-    const std::tm ctime;
-    const float temperature_2m;
-    const int precipitation_probability; //0 -> 100
-    const int weather_code;
-    const std::string icon_code;
-    const int cloud_cover; // 0 -> 100
-    const int visibility; // View distance in meters
-    const float wind_speed_10m;
-    const bool is_day;
+    std::string time_string; // A direct copy of the time as sent to us.
+    uint64_t unix_time;
+    std::tm ctime;
+    float temperature_2m;
+    int precipitation_probability; //0 -> 100
+    int weather_code;
+    std::string icon_code;
+    int cloud_cover; // 0 -> 100
+    int visibility; // View distance in meters
+    float wind_speed_10m;
+    bool is_day;
 
     operator const std::string()const{return toString();}
     const std::string toString()const;
